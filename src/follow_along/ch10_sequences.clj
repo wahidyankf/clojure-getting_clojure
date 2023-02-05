@@ -224,7 +224,6 @@ books
 (re-seq #"\w+" title)
 ;; => ("Pride" "and" "Prejudice" "and" "Zombies")
 
-
 ;; in the wild
 
 (apply str

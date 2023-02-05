@@ -2,7 +2,6 @@
 
 ;; Functions are values
 
-
 (def dracula {:title "Dracula"
               :author "Stoker"
               :price 1.99
@@ -62,7 +61,6 @@
 (both? pricey? adventure? dracula)
 ;; => nil
 
-
 ;; Functions on the fly
 
 (fn [n] (* 2 n))
@@ -110,7 +108,6 @@
 (cheap-horror-possession? dracula)
 ;; => nil
 
-
 ;; A functional toolkit
 
 (+ 1 2 3 4)
@@ -135,7 +132,6 @@
 ;; => 3
 (my-inc-p 2)
 ;; => 3
-
 
 (defn cheaper-than [max-price book]
   (when (<= (:price book) max-price)
@@ -169,7 +165,6 @@
 (cheap-horror-possession-e? dracula)
 ;; => false
 
-
 ;; Function literals
 
 (#(when (= (:genre %1) :horror) %1) dracula)
@@ -178,7 +173,6 @@
 ;; => 6
 (#(count %) "Count this string length")
 ;; => 24
-
 
 ;; In the wild
 

@@ -6,13 +6,10 @@
 
 (str "Clo" "jure")
 ;; => "Clojure"
-
 (str "Hello," " " "world" "!")
 ;; => "Hello, world!"
-
 (str 3 " " 2 " " "Blast off!")
 ;; => "3 2 Blast off!"
-
 
 (count "Hello, world")
 ;; => 12

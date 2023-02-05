@@ -20,9 +20,7 @@
 (book-arc "published?")
 ;; => nil
 
-
 ;; Keywords
-
 
 :title
 ;; => :title
@@ -37,7 +35,6 @@
 :chapter-1-and-2
 ;; => :chapter-1-and-2
 
-
 (def book
   {:title "Oliver Twist"
    :author "Dickens"
@@ -51,9 +48,7 @@
 (str "Published: " (:published book))
 ;; => "Published: 1838"
 
-
 ;; Changing your map without changing it
-
 
 (assoc book :page-count 362)
 ;; => {:title "Oliver Twist", :author "Dickens", :published 1838, :page-count 362}
@@ -77,18 +72,14 @@ book
 (assoc [:title :by :published] 1 :author)
 ;; => [:title :author :published]
 
-
 ;; Other handy map functions
-
 
 (keys book)
 ;; => (:title :author :published)
 (vals book)
 ;; => ("Oliver Twist" "Dickens" 1838)
 
-
 ;; Sets
-
 
 
 (def genres #{:sci-fi :romance :mystery})
@@ -115,9 +106,7 @@ more-authors
 (disj more-authors "King")
 ;; => #{"Dickens" "Clarke" "Austen"}
 
-
 ;; Staying out of trouble
-
 
 (= :title "title")
 ;; => false
@@ -126,10 +115,8 @@ more-authors
 (assoc book "title" "Pride and Prejudice")
 ;; => {:title "Oliver Twist", :author "Dickens", :published 1838, "title" "Pride and Prejudice"}
 
-
 (book :some-key-that-is-clearly-not-there)
 ;; => nil
-
 
 (def anonymous-book {:title "The Arabian Nights" :author nil})
 (anonymous-book :author)
@@ -140,7 +127,6 @@ more-authors
 ;; => true
 (contains? anonymous-book :favorite-color)
 ;; => false
-
 
 (def possible-authors #{"Austen" "Dickens" nil})
 (contains? possible-authors "Austen")

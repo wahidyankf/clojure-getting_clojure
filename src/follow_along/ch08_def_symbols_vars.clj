@@ -10,7 +10,6 @@
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (def COMPANY-NAME "Blotts Books")
 
-
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn book-description [book]
   (str (:title book)
@@ -22,7 +21,6 @@
     (str (:title book)
          " Written by "
          (:author book))))
-
 
 (def OLD-ISBN-LENGTH 10)
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}

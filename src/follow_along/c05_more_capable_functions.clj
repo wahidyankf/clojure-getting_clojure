@@ -3,7 +3,6 @@
 
 ;; One function, different parameters
 
-
 (defn greet1
   ([to-whom] (str "Welcome to Blotts Books" " " to-whom))
   ([message to-whom] (str message " " to-whom)))
@@ -21,9 +20,7 @@
 (greet "hola" "it may concern")
 ;; => "hola it may concern"
 
-
 ;; Arguments with wild abandon
-
 
 (defn print-any-args [& args]
   (str "My arguments are:" " " args))
@@ -38,7 +35,6 @@
 (defn new-first-argument [x & _] x)
 (new-first-argument 4 3 2 1)
 ;; => 4
-
 
 ;; Multimethods
 
@@ -71,7 +67,6 @@
 (normalize-book ["War and Peace" "Tolstoy"])
 ;; => {:title "War and Peace", :author "Tolstoy"}
 
-
 (def books-1 [{:title  "Pride and Prejudice"  :author  "Austen"  :genre :romance}
               {:title  "World War Z"  :author  "Brooks"  :genre :zombie}])
  	;; Remember you can use keys like :genre like functions on maps.
@@ -92,9 +87,7 @@
 (book-description ppz)
 ;; => "The heart warming and consuming new romance by Grahame-Smith"
 
-
 ;; Deeply recursive
-
 
 (def books
   [{:title  "Jaws"   :copies-sold 2000000}
@@ -124,7 +117,6 @@
 (defn even-better-sum-copies [books] (apply + (map :copies-sold books)))
 (even-better-sum-copies books)
 ;; => 9000000
-
 
 ;; Docstring
 

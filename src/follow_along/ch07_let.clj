@@ -1,6 +1,5 @@
 (ns follow-along.ch07-let)
 
-
 ;; ---
 ;; A local, temporary place for your stuff
 ;; ---
@@ -39,9 +38,7 @@
 (computer-felicia-price 20.0)
 ;; => 19.0
 
-
 ;; Variations on the Theme
-
 
 (def anonymous-book
   {:title "Sir Gawain and the Green Knight"})
@@ -65,7 +62,6 @@
 (uppercase-author-iflet with-author)
 ;; => "WHITE"
 
-
 (defn uppercase-author-whenlet [book]
   (when-let [author (:author book)]
     (.toUpperCase author)))
@@ -73,6 +69,5 @@
 ;; => nil
 (uppercase-author-whenlet with-author)
 ;; => "WHITE"
-
 
 ;; in the wild

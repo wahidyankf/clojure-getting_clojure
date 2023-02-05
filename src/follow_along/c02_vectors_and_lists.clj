@@ -1,8 +1,6 @@
 (ns follow-along.c02-vectors-and-lists)
 
-
 ;; one thing after another
-
 
 [1 2 3 4]
 ;; => [1 2 3 4]
@@ -11,9 +9,7 @@
 [[1 true 3 "four" 5] 6]
 ;; => [[1 true 3 "four" 5] 6]
 
-
 ;; A toolkit of functions
-
 
 (vector true 3 "four" 5)
 ;; => [true 3 "four" 5]
@@ -50,9 +46,7 @@ novels
 (cons "Carrie" novels)
 ;; => ("Carrie" "Emma" "Coma" "War and Peace")
 
-
 ;; Lists
-
 
 '(1 2 3)
 ;; => (1 2 3)
@@ -78,7 +72,6 @@ novels
 (def vector-poems ["Iliad" "Odyssey" "Now we are six"])
 (conj vector-poems "Jabberwocky")
 ;; => ["Iliad" "Odyssey" "Now we are six"]
-
 
 ;; Staying out of trouble
 novels

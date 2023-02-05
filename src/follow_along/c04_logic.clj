@@ -2,7 +2,6 @@
 
 ;; The fundamental if
 
-
 (defn print-greeting [preffered-customer]
   (if preffered-customer
     "Welcome back to Blotts Books!"
@@ -13,9 +12,7 @@
 (print-greeting false)
 ;; => "Welcome to Blotts Books!"
 
-
 ;; Asking questions
-
 
 (= 1 1)
 ;; => true
@@ -58,9 +55,7 @@
 (shipping-surcharge? false true true)
 ;; => true
 
-
 ;; Truthy and Falsy
-
 
 (if 1 true false)
 ;; => true
@@ -81,9 +76,7 @@
 (if nil true false)
 ;; => false
 
-
 ;; Do and when
-
 
 (do
   (println "This is four expressions")
@@ -121,7 +114,6 @@
 (customer-greeting nil)
 ;; => "Welcome to Blotts Books"
 
-
 ;; Throwing and catching
 
 ;; (/ 0 0)
@@ -137,7 +129,6 @@
   (catch StackOverflowError _ (println "Unable to publish..")))
 ;; => nil
 
-
 (defn publish-book [book]
   (when (not (:title book))
     (throw (ex-info "A book needs a title!" {:book book})))
@@ -149,14 +140,11 @@
 ;; => Execution error (ExceptionInfo) at follow-along.c04-logic/publish-book (form-init4924825596685870731.clj:143).
 ;;    A book needs a title!
 
-
 (try (publish-book {:author "Hurra!"})
      (catch clojure.lang.ExceptionInfo _  "Exception successfully catched!"))
 ;; => "Exception successfully catched!"
 
-
 ;; In the wild
-
 
 (defn ensure-task-is-a-vector [task]
   (if (vector? task)
@@ -167,9 +155,7 @@
 (ensure-task-is-a-vector '(1 2 3))
 ;; => [(1 2 3)]
 
-
 ;; Staying out of trouble
-
 
 (and true 1984)
 ;; => 1984

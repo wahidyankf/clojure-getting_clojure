@@ -19,7 +19,6 @@
 (clojure.data/diff literature horror)
 ;; => [["Emma" "Oliver Twist"] ["It" "Carry"] [nil nil "Possession"]]
 
-
 discount-rate
 ;; => 0.15
 
