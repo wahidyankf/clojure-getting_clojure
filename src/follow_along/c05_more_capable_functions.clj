@@ -151,8 +151,8 @@
   (ship-book book))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
-  (print-book book)
-  (ship-book book))
+(print-book book)
+(ship-book book)
 ;; the value should be vector-expression for :pre condition
 
 (defn publish-book [book]
