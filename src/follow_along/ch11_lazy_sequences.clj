@@ -3,6 +3,7 @@
 ;; Sequences without end
 
 (def jack  "All work and no play makes Jack a dull boy.")
+#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (def text [jack jack jack jack jack jack jack jack jack jack])
 (def repeated-text (repeat jack))
 (first repeated-text)
