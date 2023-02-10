@@ -1,4 +1,4 @@
-(ns follow-along.ch08-def-symbols-vars)
+(ns ch08_def_symbols_vars)
 
 ;; A global, stable place for your stuff
 

@@ -1,4 +1,4 @@
-(ns follow-along.c04-logic)
+(ns c04_logic)
 
 ;; The fundamental if
 

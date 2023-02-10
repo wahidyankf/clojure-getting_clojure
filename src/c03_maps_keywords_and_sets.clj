@@ -1,4 +1,4 @@
-(ns follow-along.c03-maps-keywords-and-sets)
+(ns c03_maps_keywords_and_sets)
 
 ;; This goes with that
 

@@ -1,4 +1,4 @@
-(ns follow-along.c05-more-capable-functions
+(ns c05_more_capable_functions
   (:require [clojure.repl :refer [doc]]))
 
 ;; One function, different parameters

@@ -1,4 +1,4 @@
-(ns follow-along.ch07-let)
+(ns ch07_let)
 
 ;; ---
 ;; A local, temporary place for your stuff

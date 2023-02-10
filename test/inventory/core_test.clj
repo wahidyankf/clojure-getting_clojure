@@ -1,5 +1,5 @@
-(ns follow-along.inventory.core-test
-  (:require [clojure.test :refer :all])
+(ns inventory.core-test
+  (:require [clojure.test :refer [deftest is testing]])
   (:require [follow-along.inventory.core :as i]))
 
 (def books

@@ -1,4 +1,4 @@
-(ns follow-along.ch10-sequences
+(ns ch10_sequences
   (:require [clojure.java.io :as io]))
 
 ;; one thing after another

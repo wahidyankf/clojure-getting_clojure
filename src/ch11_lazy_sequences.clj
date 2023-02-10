@@ -1,4 +1,4 @@
-(ns follow-along.ch11-lazy-sequences)
+(ns ch11_lazy_sequences)
 
 ;; Sequences without end
 

@@ -18,10 +18,10 @@
   (is (= :no-result (more-complex-f 1 863947))))
  	;; And the function works in other cases.
 
-(def non-critical-gen (gen/such-that (partial not= 863947) gen/pos-int))
+(def non-critical-gen (gen/such-that (partial not= 863947) gen/nat))
 
 #_{:clj-kondo/ignore [:unresolved-symbol]}
 (ctest/defspec test-other-values 10000
-  (prop/for-all [a gen/pos-int
+  (prop/for-all [a gen/nat
                  b non-critical-gen]
                 (= (* (more-complex-f a b) (- b 863947)) a)))

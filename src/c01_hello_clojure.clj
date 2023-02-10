@@ -1,4 +1,4 @@
-(ns follow-along.c01-hello-clojure)
+(ns c01_hello_clojure)
 
 ;; DO two semiconlons add up to a whole colon?
 

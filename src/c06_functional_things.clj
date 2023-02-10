@@ -1,4 +1,4 @@
-(ns follow-along.c06-functional-things)
+(ns c06_functional_things)
 
 ;; Functions are values
 

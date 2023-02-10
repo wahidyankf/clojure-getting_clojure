@@ -1,4 +1,4 @@
-(ns follow-along.inventory.dev.run-test
+(ns inventory.dev.run-test
   (:require [clojure.test :as test]))
 
 (require '[follow-along.inventory.core-test :as ct])

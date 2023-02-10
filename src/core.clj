@@ -1,4 +1,4 @@
-(ns follow-along.core
+(ns core
   (:gen-class))
 
 (defn -main

@@ -1,5 +1,4 @@
-(ns follow-along.ch13-records-and-protocols)
-
+(ns ch13_records_and_protocols)
 
 ;; The trouble with Maps
 

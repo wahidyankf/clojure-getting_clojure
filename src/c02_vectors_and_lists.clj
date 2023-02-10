@@ -1,4 +1,4 @@
-(ns follow-along.c02-vectors-and-lists)
+(ns c02_vectors_and_lists)
 
 ;; one thing after another
 

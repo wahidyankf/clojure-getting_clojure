@@ -1,4 +1,4 @@
-(ns follow-along.ch12-destructuring)
+(ns ch12_destructuring)
 
 ;; pry open your data
 

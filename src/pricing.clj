@@ -1,4 +1,4 @@
-(ns follow-along.pricing)
+(ns pricing)
 
 (def discount-rate 0.15)
 (defn discount-price [book]

@@ -1,7 +1,7 @@
-(ns follow-along.ch09-namespaces
+(ns ch09_namespaces
   (:require
    clojure.data
-   [follow-along.pricing :as pricing
+   [pricing :as pricing
     :refer [discount-rate]]))
 
 ;; A place for your vars

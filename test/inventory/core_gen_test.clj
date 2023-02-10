@@ -1,4 +1,4 @@
-(ns follow-along.inventory.core-gen-test
+(ns inventory.core-gen-test
   (:require [clojure.test.check.generators :as gen])
   (:require [clojure.test.check :as tc])
   (:require [clojure.test.check.properties :as prop])
@@ -7,7 +7,7 @@
 
 (def title-gen (gen/such-that not-empty gen/string-alphanumeric))
 (def author-gen (gen/such-that not-empty gen/string-alphanumeric))
-(def copies-gen (gen/such-that (complement zero?) gen/pos-int))
+(def copies-gen (gen/such-that (complement zero?) gen/nat))
 (def book-gen
   (gen/hash-map :title title-gen :author author-gen :copies copies-gen))
 (def inventory-gen (gen/not-empty (gen/vector book-gen)))

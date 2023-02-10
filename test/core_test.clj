@@ -1,7 +1,7 @@
-(ns follow-along.core-test
+(ns core_test
   #_{:clj-kondo/ignore [:refer-all]}
   (:require [clojure.test :refer :all]
-            [follow-along.core :refer :all]))
+            [core :refer :all]))
 
 (deftest a-test
   (testing "A Placeholder"
