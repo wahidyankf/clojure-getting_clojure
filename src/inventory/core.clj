@@ -1,6 +1,10 @@
-(ns inventory.core)
+(ns inventory.core
+  (:require [clojure.spec.alpha :as s])
+  (:require [clojure.spec.test.alpha :as st]))
 
-(defn find-by-title
+{:title  "Getting Clojure"  :author  "Olsen"  :copies 1000000}
+
+(defn find-by-title-old
   "Search for a book by title,
    where title is a string and books is a collection of book maps, each of which must have a :title entry"
   [title books]
@@ -11,4 +15,51 @@
  	  given title, where title is a string and books is a collection
  	  of book maps each of which must have a :title entry"
   [title books]
-  (:copies (find-by-title title books)))
+  (:copies (find-by-title-old title books)))
+
+;; (s/def
+;;   :inventory.core/book
+;;   (s/keys
+;;    :req-un
+;;    [:inventory.core/title
+;;     :inventory.core/author
+;;     :inventory.core/copies]))
+
+;; this will give the same effect as above commented code
+(s/def ::book (s/keys :req-un [::title ::author ::copies]))
+(s/def ::title string?)
+(s/def ::copies int?)
+(s/def ::book (s/keys :req-un [::title ::author ::copies]))
+
+;; Register a handy spec: An inventory is a collection of books.
+(s/def ::inventory
+  (s/coll-of ::book))
+
+#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
+(defn find-by-title-with-spec
+  [title inventory]
+  {:pre [(s/valid? ::title title)
+         (s/valid? ::inventory inventory)]}
+  (some #(when (= (:title %) title) %) inventory))
+
+(defn find-by-title
+  [title inventory]
+  (some #(when (= (:title %) title) %) inventory))
+(s/fdef find-by-title
+  :args (s/cat :title ::title
+               :inventory ::inventory))
+(def books
+  [{:title  "2001"    :author  "Clarke"  :copies 21}
+   {:title  "Emma"    :author  "Austen"  :copies 10}
+   {:title  "Misery"  :author  "King"    :copies 101}])
+(find-by-title "Emma" books)
+;; => {:title "Emma", :author "Austen", :copies 10}
+(find-by-title "Emma" ["Emma" "2001" "Jaws"])
+;; => nil
+
+(st/instrument 'inventory.core/find-by-title)
+(find-by-title "Emma" ["Emma" "2001" "Jaws"])
+;; => Execution error - invalid arguments to inventory.core/find-by-title at (form-init14265065737543473812.clj:61).
+;;    "Emma" - failed: map? at: [:inventory] spec: :inventory.core/book
+;;    "2001" - failed: map? at: [:inventory] spec: :inventory.core/book
+;;    "Jaws" - failed: map? at: [:inventory] spec: :inventory.core/book
