@@ -1,4 +1,4 @@
-(ns interop.interop-basic
+(ns java_source.interop-basic
   (:import java.io.File))
 
 (def authors (java.io.File. "authors.txt"))

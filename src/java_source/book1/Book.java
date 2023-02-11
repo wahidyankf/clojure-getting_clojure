@@ -1,4 +1,4 @@
-package interop.book1;
+package java_source.book1;
 
 public class Book {
 

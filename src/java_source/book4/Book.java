@@ -1,4 +1,4 @@
-package interop.book5;
+package java_source.book4;
 
 // Book is now a subclass of Publication, which handles the author and title.
 

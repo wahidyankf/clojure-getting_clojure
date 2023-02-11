@@ -1,4 +1,4 @@
-(ns interop.interop-advance
+(ns java_source.interop-advance
   (:import com.google.gson.Gson)
   (:import (java.io File)))
 

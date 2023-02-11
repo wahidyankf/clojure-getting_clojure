@@ -1,4 +1,4 @@
-package interop.book5;
+package java_source.book4;
 
 // By default, Publication is a subclass of java.lang.Object.
 

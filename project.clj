@@ -8,7 +8,7 @@
                  [mx.cider/enrich-classpath "1.9.0"]
                  [org.clojure/test.check "1.1.1"]
                  [com.google.code.gson/gson  "2.8.0"]]
-  :java-source-paths ["src/interop"]
+  :java-source-paths ["src/java_source"]
   :main ^:skip-aot follow-along.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
