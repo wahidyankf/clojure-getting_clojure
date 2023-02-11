@@ -10,6 +10,7 @@
 ;;     (str "Welcome to Blotts Books!")))
 
 (def counter (atom 0))
+#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var :unused-binding]}
 (defn greeting-message [req]
   (swap! counter inc)
   (if (= @counter 500)
@@ -90,6 +91,7 @@ by-title-agent
 (memoized-blurb emma)
 ;; => "Don't miss the exciting new book, Emma by Austen"
 
+#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn memoize-code
   "Returns a memoized version of a referentially
  	  transparent function. The memoized version of
