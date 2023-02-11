@@ -3,7 +3,7 @@
   (:require [clojure.test.check :as tc])
   (:require [clojure.test.check.properties :as prop])
   (:require [clojure.test.check.clojure-test :as ctest])
-  (:require [follow-along.inventory.core :as i]))
+  (:require [inventory.core :as i]))
 
 (def title-gen (gen/such-that not-empty gen/string-alphanumeric))
 (def author-gen (gen/such-that not-empty gen/string-alphanumeric))

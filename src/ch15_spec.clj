@@ -107,8 +107,6 @@
 (s/conform s-n-s-n ["Emma" 1815 "Jaws" 1974 "a"])
 ;; => :clojure.spec.alpha/invalid
 
-;; Function specs
-
 ;; Spec-Driven tests
 
 ;; Staying out of trouble

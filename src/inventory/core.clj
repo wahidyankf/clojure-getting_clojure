@@ -28,6 +28,7 @@
 ;; this will give the same effect as above commented code
 (s/def ::book (s/keys :req-un [::title ::author ::copies]))
 (s/def ::title string?)
+(s/def ::author string?)
 (s/def ::copies int?)
 (s/def ::book (s/keys :req-un [::title ::author ::copies]))
 
@@ -56,10 +57,22 @@
 ;; => {:title "Emma", :author "Austen", :copies 10}
 (find-by-title "Emma" ["Emma" "2001" "Jaws"])
 ;; => nil
-
 (st/instrument 'inventory.core/find-by-title)
-(find-by-title "Emma" ["Emma" "2001" "Jaws"])
-;; => Execution error - invalid arguments to inventory.core/find-by-title at (form-init14265065737543473812.clj:61).
+;; (find-by-title "Emma" ["Emma" "2001" "Jaws"])
+;; => Execution error - invalid arguments to inventory.core/find-by-title at (form-init3079279510701688910.clj:61).
 ;;    "Emma" - failed: map? at: [:inventory] spec: :inventory.core/book
 ;;    "2001" - failed: map? at: [:inventory] spec: :inventory.core/book
 ;;    "Jaws" - failed: map? at: [:inventory] spec: :inventory.core/book
+
+(defn book-blurb [book]
+  (str  "The best selling book "  (:title book)  " by "  (:author book)))
+(defn check-return [{:keys [args ret]}]
+  (let [author (-> args :book :author)]
+    (not (neg? (.indexOf ret author)))))
+(s/fdef book-blurb
+  :args (s/cat :book ::book)
+  :ret (s/and string? (partial re-find #"The best selling"))
+  :fn check-return)
+
+(book-blurb (get books 0))
+;; => "The best selling book 2001 by Clarke"
