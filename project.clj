@@ -6,7 +6,9 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [cider/cider-nrepl "0.28.5"]
                  [mx.cider/enrich-classpath "1.9.0"]
-                 [org.clojure/test.check "1.1.1"]]
+                 [org.clojure/test.check "1.1.1"]
+                 [com.google.code.gson/gson  "2.8.0"]]
+  :java-source-paths ["src/interop"]
   :main ^:skip-aot follow-along.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
