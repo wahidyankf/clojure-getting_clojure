@@ -26,7 +26,6 @@
 ;;     :inventory.core/copies]))
 
 ;; this will give the same effect as above commented code
-(s/def ::book (s/keys :req-un [::title ::author ::copies]))
 (s/def ::title string?)
 (s/def ::author string?)
 (s/def ::copies int?)
