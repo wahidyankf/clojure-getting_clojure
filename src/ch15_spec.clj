@@ -106,11 +106,3 @@
 ;; => {:s1 "Emma", :n1 1815, :s2 "Jaws", :n2 1974}
 (s/conform s-n-s-n ["Emma" 1815 "Jaws" 1974 "a"])
 ;; => :clojure.spec.alpha/invalid
-
-;; Spec-Driven tests
-
-;; Staying out of trouble
-
-;; In the wild
-
-;; Wrapping Up
